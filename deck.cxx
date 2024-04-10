@@ -16,14 +16,18 @@ namespace groupGE {
 	Deck::Deck() {
 		for (int i = 1; i <= 4; i++) {
 			for (int j = 1; j <= 13; j++) {
-				cards[card(i, j)];
+				cards[Card(i, j)];
 			}
 		}
 	}
 	// deal out one card
 	const Card &Deck::deal() {
-		// this is stud function.  Replace it with your code
-		return cards[0];
+		next += 1;
+		if ((52 - next) <= (guard)) {
+			shuffle();
+			next = 0;
+		}
+		return cards[next];
 	}
 
 	// print 13 cards each row

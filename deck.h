@@ -17,7 +17,7 @@ namespace groupGE {
 	private:
 		int nCards;
 		Card cards[CARDS_PER_DECK];
-		int next;
-		int guard = 0;
+		int next = -1;
+		int guard = 5;
 	};
 }
