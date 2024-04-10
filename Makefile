@@ -1,5 +1,5 @@
-# Name: Your Name or Group name
-# Email: email address(es)
+# Name: Grant Johnson, Ethan Sychangco
+# Email: Grant Johnson, esychangco@scu.edu
 # Sample Makefile
 
 

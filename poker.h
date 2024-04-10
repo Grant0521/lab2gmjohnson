@@ -1,4 +1,6 @@
 /*
+ * Name: Grant Johnson, Ethan Sychangco
+ * Email: Gmjohnson@scu.edu, Esychangco@scu.edu
  * CSEN 79 Lab Sample Code
  */
 #ifndef POKER_H

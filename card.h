@@ -1,6 +1,6 @@
 /*
- * CSEN 79 Lab Sample Code
- * Your name, Your email
+ * Name: Grant Johnson, Ethan Sychangco
+ * Email: Gmjohnson@scu.edu, Esychangco@scu.edu
  */
 #ifndef CARD_H
 #define CARD_H

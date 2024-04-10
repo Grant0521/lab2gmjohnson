@@ -1,6 +1,6 @@
 /*
- * Name: Your Name
- * Email: Your email
+ * Name: Grant Johnson, Ethan Sychangco
+ * Email: Gmjohnson@scu.edu, Esychangco@scu.edu
  */
 #include <ctime>
 #include <iomanip>
