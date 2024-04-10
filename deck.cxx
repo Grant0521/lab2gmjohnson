@@ -13,6 +13,13 @@ using namespace std;
 
 // Deck class implementation
 namespace groupGE {
+	Deck::Deck() {
+		for (int i = 1; i <= 4; i++) {
+			for (int j = 1; j <= 13; j++) {
+				cards[card(i, j)];
+			}
+		}
+	}
 	// deal out one card
 	const Card &Deck::deal() {
 		// this is stud function.  Replace it with your code

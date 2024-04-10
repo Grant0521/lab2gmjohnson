@@ -8,7 +8,7 @@ namespace groupGE {
 	class Deck {
 	public:
 		static const size_t CARDS_PER_DECK = 52;
-		// contructor here to initialize members
+		Deck();
 		const Card &deal(void);
 		void shuffle(void);
 
@@ -18,6 +18,6 @@ namespace groupGE {
 		int nCards;
 		Card cards[CARDS_PER_DECK];
 		int next;
-		int guard;
+		int guard = 0;
 	};
 }
