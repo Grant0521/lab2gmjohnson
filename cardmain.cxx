@@ -7,7 +7,7 @@
 #include "card.h"
 
 using namespace std;
-using namespace csen79;
+using namespace groupGE;
 
 // Test program for Card
 int main(void) {
