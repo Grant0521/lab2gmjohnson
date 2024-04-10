@@ -11,6 +11,14 @@ using namespace groupGE;
 
 // Test program for Card
 int main(void) {
-	// test code just for Card class
+	Card c(4,10);
+	cout << c;
+	Card d(4,11);
+	cout << d;
+
+	cout << int(d);
+
+	cout << (d < c);
+
 	return EXIT_SUCCESS;
 }
