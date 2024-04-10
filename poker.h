@@ -5,7 +5,7 @@
 #define POKER_H
 
 // Poker class
-namespace csen79 {
+namespace groupGE {
 	class Poker {
 	public:
 		// An int to define each of the poker ranking

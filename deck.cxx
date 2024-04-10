@@ -12,7 +12,7 @@ using namespace std;
 #include "deck.h"
 
 // Deck class implementation
-namespace csen79 {
+namespace groupGE {
 	// deal out one card
 	const Card &Deck::deal() {
 		// this is stud function.  Replace it with your code

@@ -8,7 +8,7 @@
 #include "deck.h"
 
 using namespace std;
-using namespace csen79;
+using namespace groupGE;
 
 // Test program for Deck class
 int main(void) {

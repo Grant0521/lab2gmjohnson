@@ -8,7 +8,7 @@
 // short hand to define static const varables
 
 // stand-alone Card class
-namespace csen79 {
+namespace groupGE {
 	class Card {
 	public:
 		using rank_t = int;

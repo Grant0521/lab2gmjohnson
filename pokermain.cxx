@@ -12,7 +12,7 @@
 #include "poker.h"
 
 using namespace std;
-using namespace csen79;
+using namespace groupGE;
 
 // Poker test code
 int main(void) {

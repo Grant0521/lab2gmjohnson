@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace csen79 {
+namespace groupGE {
 	// so that we can simply "cout << " a poker hand
 	ostream& operator<<(ostream& os, const Poker &h) {
 		return os;

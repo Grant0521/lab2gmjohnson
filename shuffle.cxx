@@ -10,7 +10,7 @@ using namespace std;
 #include "card.h"
 #include "deck.h"
 
-namespace csen79 {
+namespace groupGE {
 	// Fisher-Yates shuffle
 	void Deck::shuffle(void) { }
 }
