@@ -19,6 +19,7 @@ namespace groupGE {
 
 	// encode a card into an integer
 	operator int() const;
+	friend bool operator< (const Card &c1, const Card &c2);
 
 	private:
 		rank_t rank;	// A, King, Queen, ..., 2
