@@ -2,7 +2,7 @@
  * Name: Grant Johnson, Ethan Sychangco
  * Email: Gmjohnson@scu.edu, Esychangco@scu.edu
  */
-namespace csen79 {
+namespace groupGE {
 	// Deck class with an embedded Card class
 	// See stand-alone Card class in "card.h"
 	class Deck {
