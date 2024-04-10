@@ -1,6 +1,6 @@
 /*
- * CSEN 79 Lab Sample Code
- * Your name, Your email
+ * Name: Grant Johnson, Ethan Sychangco
+ * Email: Gmjohnson@scu.edu, Esychangco@scu.edu
  */
 namespace csen79 {
 	// Deck class with an embedded Card class
