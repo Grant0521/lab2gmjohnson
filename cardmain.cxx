@@ -11,14 +11,14 @@ using namespace groupGE;
 
 // Test program for Card
 int main(void) {
-	Card c(4,10);
-	cout << c;
-	Card d(4,11);
-	cout << d;
+	cout << "Creating a full deck of cards!" << endl;
 
-	cout << int(d);
-
-	cout << (d < c);
-
+	for (int rank = 2; rank < 15; rank++){
+		for (int suit = 1; suit < 5; suit++){
+			Card c(suit, rank);
+			cout << c << " ";
+		}
+		cout << endl;
+	}
 	return EXIT_SUCCESS;
 }
