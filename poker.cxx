@@ -55,9 +55,17 @@ namespace groupGE {
 		bool straight;
 		for (int i = 0; i < 5; i++) {
 			max = hand_ranks[i];
+			if (max == 14) {
+				if (hand_ranks[i + 1] > 7) {
+					max = 14;
+				}
+				else {
+					max = 1;
+				}
+			}
 			straight = false;
 			for (int j = i + 1; j < 5; j++) {
-				if ((hand_ranks[i]) == (max - 1)) {
+				if ((hand_ranks[j]) == (max - 1)) {
 					straight = true;
 				}
 			}
@@ -68,6 +76,9 @@ namespace groupGE {
 		return true;
 	}
 	bool Poker::isQuad() {
+		for (int i = 0; i < 5; i++) {
+
+		}
 		return true;
 	}
 	bool Poker::isTriple() {
