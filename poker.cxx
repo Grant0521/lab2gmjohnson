@@ -51,31 +51,35 @@ namespace groupGE {
 		return true;
 	}
 	bool Poker::isStraight() {
-		int max;
+		int temp;
 		bool straight;
 		for (int i = 0; i < 5; i++) {
-			max = hand_ranks[i];
-			if (max == 14) {
+			if (hand_ranks[i] == 14) {
 				if (hand_ranks[i + 1] > 7) {
-					max = 14;
+					hand_ranks[i] = 14;
 				}
 				else {
-					max = 1;
+					hand_ranks[i] = 1;
 				}
 			}
-			straight = false;
-			for (int j = i + 1; j < 5; j++) {
-				if ((hand_ranks[j]) == (max - 1)) {
-					straight = true;
+			for (int j = i; j < 5; j++) {
+				if (hand_ranks[j] > hand_ranks[i]) {
+					temp = hand_ranks[i];
+					hand_ranks[i] = hand_ranks[j];
+					hand_ranks[j] = temp;
 				}
 			}
-			if (!straight) {
-				return false;
+			if (i > 0) {
+				if (hand_ranks[i] != hand_ranks[i - 1] + 1) {
+					return false;
+				}
 			}
 		}
 		return true;
 	}
 	bool Poker::isQuad() {
+		int testNum;
+		bool oneFail = true;
 		for (int i = 0; i < 5; i++) {
 
 		}
