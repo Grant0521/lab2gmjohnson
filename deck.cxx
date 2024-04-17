@@ -10,9 +10,11 @@
 
 using namespace groupGE;
 
-Deck::Deck() : next(-1), guard(5) {
+Deck::Deck() {
+    guard = 5;
+    next = -1;
     for (int i = 0; i < CARDS_PER_DECK; ++i) {
-        cards[i] = Card(i / 13 + 1, i % 13 + 1); // Initialize cards array
+        cards[i] = Card(i / 13 + 1, i % 13 + 2); // Initialize cards array
     }
 }
 
@@ -23,14 +25,6 @@ const Card &Deck::deal() {
         next = 0;
     }
     return cards[next];
-}
-
-void Deck::shuffle() {
-    srand(time(NULL)); 
-    for (int i = CARDS_PER_DECK - 1; i > 0; i--) { 
-        int j = rand() % (i + 1);
-        std::swap(cards[i], cards[j]);
-    }
 }
 
 std::ostream& operator<<(std::ostream& os, const Deck &) {
