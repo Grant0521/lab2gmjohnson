@@ -14,7 +14,7 @@ Deck::Deck() {
     guard = 5;
     next = -1;
     for (int i = 0; i < CARDS_PER_DECK; ++i) {
-        cards[i] = Card(i / 13 + 1, i % 13 + 1); // Initialize cards array
+        cards[i] = Card(i / 13 + 1, i % 13 + 2); // Initialize cards array
     }
 }
 
