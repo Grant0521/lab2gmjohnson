@@ -36,5 +36,48 @@ namespace groupGE {
 		cout << endl; 
 		return os;
 	}
+
+	bool isFullhouse() {
+		return true;
+	}
+	bool Poker::isFlush() {
+		int j;
+		for (int i = 0; i < 4; i++) {
+			j = i + 1;
+			if (hand_suits[j] != hand_suits[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	bool Poker::isStraight() {
+		int max;
+		bool straight;
+		for (int i = 0; i < 5; i++) {
+			max = hand_ranks[i];
+			straight = false;
+			for (int j = i + 1; j < 5; j++) {
+				if ((hand_ranks[i]) == (max - 1)) {
+					straight = true;
+				}
+			}
+			if (!straight) {
+				return false;
+			}
+		}
+		return true;
+	}
+	bool Poker::isQuad() {
+		return true;
+	}
+	bool Poker::isTriple() {
+		return true;
+	}
+	bool Poker::is2Pair() {
+		return true;
+	}
+	bool Poker::isPair() {
+		return true;
+	}
 }
 
