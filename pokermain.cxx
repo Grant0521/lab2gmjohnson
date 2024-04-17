@@ -128,7 +128,7 @@ int main(void) {
 		"Full House", "Four of a Kind", "Straight Flush"};
 
 	for (int i = 0; i < 9; i++){
-		cout << "Number of hand " << hands[i] << ": " << handStats[i];
+		cout << "Number of hand " << hands[i] << ": " << handStats[i] << endl;
 	}
 
 	return EXIT_SUCCESS;
