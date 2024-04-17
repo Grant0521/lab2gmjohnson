@@ -9,3 +9,6 @@ pokermain.o
 deck.o
 shuffle.o
 card.o
+cardtest
+decktest
+pokertest
