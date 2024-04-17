@@ -14,8 +14,26 @@
 using namespace std;
 
 namespace groupGE {
+	Poker::Poker() {
+		Deck d; // make a deck
+		deck = d; // set pokerobj.deck to that deck
+	}
+
+	void Poker::dealHand(){
+		for (int card = 0; card < 5; card++){
+			Card c = deck.deal();
+			hand[card] = c;
+			hand_ranks[card] = c.getRank();
+			hand_suits[card] = c.getSuit();
+		}
+	}
+	
 	// so that we can simply "cout << " a poker hand
 	ostream& operator<<(ostream& os, const Poker &h) {
+		for (int card = 0; card < 5; card++){
+			cout << h.hand[card];
+		}
+		cout << endl; 
 		return os;
 	}
 }
