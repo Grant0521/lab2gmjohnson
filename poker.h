@@ -28,6 +28,15 @@ namespace groupGE {
 		void dealHand();
 		friend std::ostream& operator<<(std::ostream& os, const Poker &c);
 
+		// helper functions for ranking, you should implement them in poker.cxx
+		bool isFullhouse();
+		bool isFlush();
+		bool isStraight();
+		bool isQuad();
+		bool isTriple();
+		bool is2Pair();
+		bool isPair();
+
 	private:
 		Deck deck;
 		// use a member to store the the hand as opposed to dealHand returning a pointer
@@ -35,14 +44,6 @@ namespace groupGE {
 		Card hand[5];
 		int hand_ranks[10];
 		int hand_suits[10];
-
-		// helper functions for ranking, you should implement them in poker.cxx
-		bool isFlush(uint s[]) {return false; }
-		bool isStraight(uint r[]) {return false; }
-		bool isQuad(uint r[]) {return false; }
-		bool isTriple(uint r[]) {return false; }
-		bool is2Pair(uint r[]) {return false; }
-		bool isPair(uint r[]) {return false; }
 	};
 }
 
