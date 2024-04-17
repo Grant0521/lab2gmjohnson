@@ -17,7 +17,7 @@ int main(void) {
     Card tempCard;
     for (int i = 0; i < 52; i++) {
         tempCard = deckCards.deal();
-        cout << "Card suit: " << tempCard.getSuit(tempCard) << ". Card rank: " << tempCard.getRank(tempCard) << endl;
+        cout << "Card suit: " << tempCard.getSuit() << ". Card rank: " << tempCard.getRank() << endl;
     }
     return EXIT_SUCCESS;
 }

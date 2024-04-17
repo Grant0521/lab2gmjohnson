@@ -10,7 +10,9 @@
 
 using namespace groupGE;
 
-Deck::Deck() : next(-1), guard(5) {
+Deck::Deck() {
+    guard = 5;
+    next = -1;
     for (int i = 0; i < CARDS_PER_DECK; ++i) {
         cards[i] = Card(i / 13 + 1, i % 13 + 1); // Initialize cards array
     }
