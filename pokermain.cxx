@@ -20,7 +20,7 @@ int main(void) {
 	
 	cout << "[Pokertest] One hand for each ranking" << endl;
 	
-	bool handsCompleted[9];
+	bool handsCompleted[9] = {false, false, false, false, false, false, false ,false, false};
 	bool allHandsCompleted = false;
 	/* This bool array is based on the numbers in the Poker header file
 	 * static const PokerRank_t POKER_STRAIGHT_FLUSH = 8;
@@ -33,6 +33,8 @@ int main(void) {
 	 * static const PokerRank_t POKER_PAIR = 1;
 	 * static const PokerRank_t POKER_HIGHCARD = 0;
 	 */
+
+
 
 	while (!allHandsCompleted) {
 		bool newHandType = false;
@@ -69,16 +71,20 @@ int main(void) {
 			handsCompleted[Poker::POKER_PAIR] = true;
 			cout << p << " (One Pair)" << endl;
 		}
-		else if (!handsCompleted[Poker::POKER_STRAIGHT_FLUSH]){
+		else if (!handsCompleted[Poker::POKER_HIGHCARD]){
 			handsCompleted[Poker::POKER_HIGHCARD] = true;
 			cout << p << " (High Card)" << endl;
 		}
 
 		// check to see if we have printed all the hands
+		bool atLeastOneIncomplete = false;
 		for (int i = 0; i < 9; i++){
 			if (!handsCompleted[i]) {
-				allHandsCompleted = true;
+				atLeastOneIncomplete = true;
 			}
+		}
+		if (!atLeastOneIncomplete){
+			allHandsCompleted = true;
 		}
 	}
 

@@ -17,6 +17,7 @@ namespace groupGE {
 	Poker::Poker() {
 		Deck d; // make a deck
 		deck = d; // set pokerobj.deck to that deck
+		deck.shuffle();
 	}
 
 	void Poker::dealHand(){
@@ -32,12 +33,11 @@ namespace groupGE {
 	ostream& operator<<(ostream& os, const Poker &h) {
 		for (int card = 0; card < 5; card++){
 			cout << h.hand[card];
-		}
-		cout << endl; 
+		} 
 		return os;
 	}
 
-	bool isFullhouse() {
+	bool Poker::isFullhouse() {
 		return true;
 	}
 	bool Poker::isFlush() {
