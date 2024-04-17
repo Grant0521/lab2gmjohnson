@@ -5,26 +5,37 @@
 #ifndef CARD_H
 #define CARD_H
 
-// short hand to define static const varables
+#include <iostream> // Include necessary headers
 
-// stand-alone Card class
 namespace groupGE {
-	class Card {
-	public:
-		using rank_t = int;
-		using suit_t = int;
-		Card(suit_t s=0, rank_t r=0): rank{r}, suit{s} {}
-		
-	friend std::ostream& operator<<(std::ostream& os, const Card &c);
+    typedef int rank_t;
+    typedef int suit_t;
 
-	// encode a card into an integer
-	operator int() const;
-	friend bool operator< (const Card &c1, const Card &c2);
+    class Card {
+    public:
+        Card(suit_t s = 0, rank_t r = 0): rank(r), suit(s) {}
+        int getSuit() const { return suit; } // Define functions inline
+        int getRank() const { return rank; }
 
-	private:
-		rank_t rank;	// A, King, Queen, ..., 2
-		suit_t suit;	// Spade, Heart, Diamond, Club
-	};
+        friend std::ostream& operator<<(std::ostream& os, const Card &c) {
+            os << "Card: Rank " << c.rank << ", Suit " << c.suit;
+            return os;
+        }
+
+        operator int() const { return rank; }
+        friend bool operator< (const Card &c1, const Card &c2) {
+            return c1.rank < c2.rank;
+        }
+
+        void swap(Card &c1, Card &c2) {
+            std::swap(c1.rank, c2.rank);
+            std::swap(c1.suit, c2.suit);
+        }
+
+    private:
+        rank_t rank;
+        suit_t suit;
+    };
 }
 
 #endif // CARD_H
