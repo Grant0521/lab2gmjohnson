@@ -92,5 +92,44 @@ int main(void) {
 	const int HAND_COUNT = 999999;
 	int handStats[9];
 
+	for (int hand = 0; hand < HAND_COUNT; hand++){
+		p.dealHand();
+
+		if (p.isFlush() && p.isStraight()){
+			handStats[Poker::POKER_STRAIGHT_FLUSH] += 1;
+		}
+		else if (p.isQuad()) {
+			handStats[Poker::POKER_QUAD] += 1;
+		}
+		else if (p.isFullhouse()){
+			handStats[Poker::POKER_FULLHOUSE] += 1;
+		}
+		else if (p.isFlush()){
+			handStats[Poker::POKER_FLUSH] += 1;
+		}
+		else if (p.isStraight()){
+			handStats[Poker::POKER_STRAIGHT] += 1;
+		}
+		else if (p.isTriple()){
+			handStats[Poker::POKER_TRIPLE] += 1;
+		}
+		else if (p.is2Pair()){
+			handStats[Poker::POKER_2_PAIR] += 1;
+		}
+		else if (p.isPair()){
+			handStats[Poker::POKER_PAIR] += 1;
+		}
+		else {
+			handStats[Poker::POKER_HIGHCARD] += 1;
+		}
+	}
+
+	string hands[9] = {"High Card", "Pair", "Two Pair", "Three of a Kind", "Straight", "Flush",
+		"Full House", "Four of a Kind", "Straight Flush"};
+
+	for (int i = 0; i < 9; i++){
+		cout << "Number of hand " << hands[i] << ": " << handStats[i];
+	}
+
 	return EXIT_SUCCESS;
 }
