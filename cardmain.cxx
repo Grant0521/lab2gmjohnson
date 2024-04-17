@@ -11,7 +11,7 @@ using namespace groupGE;
 
 // Test program for Card
 int main(void) {
-	cout << "Creating a full deck of cards!" << endl;
+	cout << "[Cardtest] Creating a full deck of cards!" << endl;
 
 	for (int rank = 2; rank < 15; rank++){
 		for (int suit = 1; suit < 5; suit++){
