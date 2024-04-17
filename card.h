@@ -17,20 +17,15 @@ namespace groupGE {
         int getSuit() const { return suit; } // Define functions inline
         int getRank() const { return rank; }
 
-        friend std::ostream& operator<<(std::ostream& os, const Card &c) {
-            os << "Card: Rank " << c.rank << ", Suit " << c.suit;
-            return os;
-        }
+    friend std::ostream& operator<<(std::ostream& os, const Card &c);
 
-        operator int() const { return rank; }
-        friend bool operator< (const Card &c1, const Card &c2) {
-            return c1.rank < c2.rank;
-        }
+    operator int() const;
+    friend bool operator< (const Card &c1, const Card &c2);
 
-        void swap(Card &c1, Card &c2) {
-            std::swap(c1.rank, c2.rank);
-            std::swap(c1.suit, c2.suit);
-        }
+    void swap(Card &c1, Card &c2) {
+        std::swap(c1.rank, c2.rank);
+        std::swap(c1.suit, c2.suit);
+    }
 
     private:
         rank_t rank;
