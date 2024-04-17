@@ -12,6 +12,9 @@ using namespace groupGE;
 
 // Test program for Deck class
 int main(void) {
+
+	Deck d();
+	cout << d;
 	return EXIT_SUCCESS;
 }
 

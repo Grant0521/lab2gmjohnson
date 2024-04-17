@@ -33,6 +33,12 @@ namespace groupGE {
 	// print 13 cards each row
 	ostream& operator<<(ostream& os, const Deck &d) {
 		// this is stud function.  Replace it with your code
+
+		for (int row = 0; row < 3; row++){
+			for (int col = 0; col < 13; col++){
+				os << d.cards[(13 * row) + col];
+			}
+		}
 		return os;
 	}
 }
