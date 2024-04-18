@@ -10,6 +10,7 @@
 #include "card.h"
 #include "deck.h"
 #include "poker.h"
+#include <chrono>
 
 using namespace std;
 using namespace groupGE;
@@ -34,11 +35,13 @@ int main(void) {
 	 * static const PokerRank_t POKER_HIGHCARD = 0;
 	 */
 
-
-
+	int totalHands = 0;
+	double percent;
+	auto start = std::chrono::high_resolution_clock::now();
 	while (!allHandsCompleted) {
 		bool newHandType = false;
 		p.dealHand();
+
 		if (p.isFlush() && p.isStraight() && !handsCompleted[Poker::POKER_STRAIGHT_FLUSH]){
 			handsCompleted[Poker::POKER_STRAIGHT_FLUSH] = true;
 			cout << p << " (Straight Flush)" << endl;
@@ -94,7 +97,7 @@ int main(void) {
 
 	for (int hand = 0; hand < HAND_COUNT; hand++){
 		p.dealHand();
-
+		totalHands += 1;
 		if (p.isFlush() && p.isStraight()){
 			handStats[Poker::POKER_STRAIGHT_FLUSH] += 1;
 		}
@@ -123,12 +126,17 @@ int main(void) {
 			handStats[Poker::POKER_HIGHCARD] += 1;
 		}
 	}
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> duration = end - start;
 
 	string hands[9] = {"High Card", "Pair", "Two Pair", "Three of a Kind", "Straight", "Flush",
 		"Full House", "Four of a Kind", "Straight Flush"};
 
+	cout << "Dealt " << totalHands << " hands. Elapsed Time: " << duration.count() << " seconds." << endl;
+	cout << fixed << setprecision(6) << "Average " << (duration.count() / totalHands) * 50000 << " seconds per 50k hands" << endl;
 	for (int i = 0; i < 9; i++){
-		cout << setw(20) << hands[i] << ": " << setw(8) << handStats[i] << endl;
+		percent = (handStats[i] * 100.00) / totalHands;
+		cout << setw(20) << hands[i] << ": " << setw(20) << handStats[i] << setw(20) << setprecision(2) << percent << "%" << endl;
 	}
 
 	return EXIT_SUCCESS;

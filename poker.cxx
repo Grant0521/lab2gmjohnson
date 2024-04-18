@@ -38,7 +38,21 @@ namespace groupGE {
 	}
 
 	bool Poker::isFullhouse() {
-		return true;
+		int temp;
+		bool straight;
+		for (int i = 0; i < 5; i++) {
+			for (int j = i; j < 5; j++) {
+				if (hand_ranks[j] > hand_ranks[i]) {
+					temp = hand_ranks[i];
+					hand_ranks[i] = hand_ranks[j];
+					hand_ranks[j] = temp;
+				}
+			}
+		}
+		if (((hand_ranks[0] == hand_ranks[1] && hand_ranks[1] == hand_ranks[2]) && (hand_ranks[3] == hand_ranks[4])) || ((hand_ranks[0] == hand_ranks[1]) && (hand_ranks[2] == hand_ranks[3]) && (hand_ranks[3] == hand_ranks[4]))) {
+			return true;
+		}
+		return false;
 	}
 	bool Poker::isFlush() {
 		int j;
@@ -70,7 +84,7 @@ namespace groupGE {
 				}
 			}
 			if (i > 0) {
-				if (hand_ranks[i] != hand_ranks[i - 1] + 1) {
+				if ((hand_ranks[i] + 1) != (hand_ranks[i - 1])) {
 					return false;
 				}
 			}
@@ -78,21 +92,76 @@ namespace groupGE {
 		return true;
 	}
 	bool Poker::isQuad() {
-		int testNum;
-		bool oneFail = true;
-		for (int i = 0; i < 5; i++) {
-
+		int count1 = 1, count2 = 1;
+		for (int i = 2; i < 5; i++) {
+			if (hand_ranks[i] == hand_ranks[0]) {
+				count1 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[1]) {
+				count2 += 1;
+			}
 		}
-		return true;
+		if (count1 > 3 || count2 > 3) {
+			return true;
+		}
+		return false;
 	}
 	bool Poker::isTriple() {
-		return true;
+		int count1 = 0, count2 = 0, count3 = 0;
+		for (int i = 0; i < 5; i++) {
+			if (hand_ranks[i] == hand_ranks[0]) {
+				count1 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[1]) {
+				count2 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[2]) {
+				count3 += 1;
+			}
+		}
+		if (count1 > 2 || count2 > 2 || count3 > 2) {
+			return true;
+		}
+		return false;
 	}
 	bool Poker::is2Pair() {
-		return true;
+		int count1 = 0, count2 = 0, count3 = 0, count4 = 0;
+		for (int i = 0; i < 5; i++) {
+			if (hand_ranks[i] == hand_ranks[0]) {
+				count1 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[2]) {
+				count2 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[4]) {
+				count3 += 1;
+			}
+		}
+		if ((count1 > 1 && count2 > 1) || (count3 > 1 && count2 > 1) || (count1 > 1 && count3 > 1)) {
+			return true;
+		}
+		return false;
 	}
 	bool Poker::isPair() {
-		return true;
+		int count1 = 0, count2 = 0, count3 = 0, count4 = 0;
+		for (int i = 0; i < 5; i++) {
+			if (hand_ranks[i] == hand_ranks[0]) {
+				count1 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[1]) {
+				count2 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[2]) {
+				count3 += 1;
+			}
+			else if (hand_ranks[i] == hand_ranks[2]) {
+				count4 += 1;
+			}
+		}
+		if (count1 > 1 || count2 > 1 || count3 > 1 || count4 > 1) {
+			return true;
+		}
+		return false;
 	}
 }
 
