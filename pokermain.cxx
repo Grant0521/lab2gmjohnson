@@ -19,7 +19,7 @@ using namespace groupGE;
 int main(void) {
 	Poker p;
 	
-	cout << "[Pokertest] One hand for each ranking" << endl;
+	cout << "[Pokertest] One hand for each ranking!" << endl;
 	
 	bool handsCompleted[9] = {false, false, false, false, false, false, false ,false, false};
 	bool allHandsCompleted = false;
@@ -91,7 +91,7 @@ int main(void) {
 		}
 	}
 
-	cout << "[Pokertest] Statistics:" << endl;
+	cout << "[Pokertest] Hand statistics!" << endl;
 	const int HAND_COUNT = 999999;
 	int handStats[9];
 

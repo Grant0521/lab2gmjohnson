@@ -15,9 +15,13 @@ using namespace groupGE;
 int main(void) {
     Deck deckCards;
     Card tempCard;
-    for (int i = 0; i < 52; i++) {
-        tempCard = deckCards.deal();
-        cout << tempCard << endl;
+    cout << "[Decktest] Printing a full deck! (Shuffled at 5 cards remaining)" << endl;
+    for (int row = 0; row < 4; row ++){
+        for (int i = 0; i < 13; i++) {
+            tempCard = deckCards.deal();
+            cout << tempCard << " ";
+        }    
+        cout << endl;
     }
     return EXIT_SUCCESS;
 }
