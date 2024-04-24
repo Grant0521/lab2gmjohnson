@@ -23,7 +23,7 @@ int main(void) {
 	
 	bool handsCompleted[9] = {false, false, false, false, false, false, false ,false, false};
 	bool allHandsCompleted = false;
-	/* This bool array is based on the numbers in the Poker header file
+	/* This bool array is based on the numbers in the Poker header file. Reiterated here:
 	 * static const PokerRank_t POKER_STRAIGHT_FLUSH = 8;
 	 * static const PokerRank_t POKER_QUAD = 7;
 	 * static const PokerRank_t POKER_FULLHOUSE = 6;
@@ -80,6 +80,7 @@ int main(void) {
 		}
 
 		// check to see if we have printed all the hands
+		// if at least one incomplete, we are not done; keep looping
 		bool atLeastOneIncomplete = false;
 		for (int i = 0; i < 9; i++){
 			if (!handsCompleted[i]) {
@@ -129,6 +130,7 @@ int main(void) {
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> duration = end - start;
 
+	// print the results in a nice format
 	string hands[9] = {"High Card", "Pair", "Two Pair", "Three of a Kind", "Straight", "Flush",
 		"Full House", "Four of a Kind", "Straight Flush"};
 

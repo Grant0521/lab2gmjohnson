@@ -21,6 +21,7 @@ namespace groupGE {
 	}
 
 	void Poker::dealHand(){
+		// deal 5 cards from the deck and capture those cards
 		for (int card = 0; card < 5; card++){
 			Card c = deck.deal();
 			hand[card] = c;
@@ -36,7 +37,8 @@ namespace groupGE {
 		} 
 		return os;
 	}
-
+	
+	// All the following functions are for determining poker hands
 	bool Poker::isFullhouse() {
 		int temp;
 		bool straight;
