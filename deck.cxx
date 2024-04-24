@@ -10,6 +10,9 @@
 
 using namespace groupGE;
 
+namespace groupGE{
+
+
 Deck::Deck() {
     guard = 5;
     next = -1;
@@ -27,7 +30,15 @@ const Card &Deck::deal() {
     return cards[next];
 }
 
-std::ostream& operator<<(std::ostream& os, const Deck &) {
+std::ostream& operator<<(std::ostream& os, const Deck &d) {
     // Implement printing of Deck
+
+    for (int row = 0; row < 4; row ++){
+        for (int i = 0; i < 13; i++) {
+            std::cout << d.cards[(13 * row) + i] << " ";
+        }    
+        std::cout << std::endl;
+    }
     return os;
+}
 }

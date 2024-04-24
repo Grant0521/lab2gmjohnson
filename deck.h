@@ -15,7 +15,7 @@ namespace groupGE {
         const Card &deal(void);
         void shuffle(void);
 
-        friend std::ostream& operator<<(std::ostream& os, const Deck &);
+        friend std::ostream& operator<<(std::ostream& os, const Deck &d);
 
         // Consider implementing a swap function if needed
     private:
